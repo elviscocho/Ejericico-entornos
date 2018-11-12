@@ -20,20 +20,14 @@ public class JavaApplication3 {
  /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        
-        
-        
-
+public static void main(String[] args) {
        // TODO code application logic here
-       String cadena;
+   
+    String cadena;
        boolean seguir;
        int con=0;
          Scanner sc=new Scanner(System.in);
-         
   
-   
        do
        {
            System.out.println("anota un caracter");
@@ -43,9 +37,7 @@ public class JavaApplication3 {
            cadena=sc.nextLine();
            cadena=cadena.toUpperCase();
            con=0;
-           for (int i=0;i<cadena.length();i++)
-                if (cadena.charAt(i)==caracter)
-                    con++;
+           con = pepito(cadena, caracter, con);
            System.out.println("se han anotado: "+con+" veces el caracter: "+caracter);
            System.out.println("¿deseas escribir otra?");
            seguir=sc.nextBoolean();
@@ -53,5 +45,12 @@ public class JavaApplication3 {
        }
        while (seguir==true);
    }
-    }
-    
+
+   public static int pepito(String cadena, char caracter, int con) {
+       for (int i=0;i<cadena.length();i++)
+           if (cadena.charAt(i)==caracter)
+               con++;
+       return con;
+   }
+   
+}
